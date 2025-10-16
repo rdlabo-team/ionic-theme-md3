@@ -1,0 +1,34 @@
+/**
+ * @naming
+ * prefix:                 ios26
+ * target-element:         tab-button
+ * target css property:    color
+ * status:                 selected
+ * additional information: rgb
+ */
+
+:root {
+  --ios26-floating-safe-area-top: max(10px, var(--ion-safe-area-top, 0px));
+  --ios26-floating-safe-area-bottom: max(10px, calc(var(--ion-safe-area-bottom, 0px) - 12px));
+
+  --ios26-activated-transition-duration: 140ms;
+
+  --ios26-glass-background-rgb: 255, 255, 255;
+  --ios26-glass-box-shadow-color-rgb: 220, 220, 220;
+  --ios26-glass-border-color-rgb: 255, 255, 255;
+  --ios26-button-color-selected-rgb: 16, 16, 16;
+
+  /**
+   * `--ios26-color-background-rgb` is deprecated.
+   * You should replace to '--ios26-content-box-shadow-rgb'.
+   */
+  --ios26-content-box-shadow-rgb: var(--ios26-color-background-rgb, 255, 255, 255);
+
+  /**
+   * `--ion-color-**-brightness-rgb` is deprecated.
+   * You should replace to '--ion-color-**-brightness'
+   */
+  @each $item in primary, secondary, tertiary, success, warning, danger, light, medium, dark {
+    --ion-color-#{$item}-brightness: rgb(var(--ion-color-#{$item}-brightness-rgb));
+  }
+}

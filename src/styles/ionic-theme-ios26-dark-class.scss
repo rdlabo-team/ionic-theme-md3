@@ -1,0 +1,6 @@
+@use 'utils/theme-dark';
+
+.ion-palette-dark {
+  @include theme-dark.default-variables;
+  @include theme-dark.theme-dark;
+}

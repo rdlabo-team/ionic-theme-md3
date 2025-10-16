@@ -1,0 +1,7 @@
+{
+  "name": "theme-ios2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

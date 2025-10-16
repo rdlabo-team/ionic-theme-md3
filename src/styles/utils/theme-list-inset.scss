@@ -1,0 +1,98 @@
+@mixin ion-list-inset() {
+  background: transparent;
+
+  ion-list-header {
+    display: flex;
+    align-items: center;
+
+    ion-label {
+      font-size: 0.9rem;
+      margin: 8px 4px 4px;
+      color: var(--ion-color-medium-tint);
+    }
+
+    ion-button {
+      margin-top: 8px;
+    }
+
+    ion-note {
+      font-size: 0.9rem;
+      margin: 8px 16px 4px 0;
+    }
+  }
+
+  // TODO: これはUtility Classにマイグレートする必要があります
+  ion-item-group.header-item-group {
+    & > ion-item > ion-label {
+      width: 100%;
+      text-align: center;
+      padding: 32px 16px 16px;
+      transform: translateX(5px);
+
+      /**
+       * ion-header.header-collapse-condenseを使って、スクロールによってHeaderを変化させるトリック
+       */
+      ion-header.header-collapse-condense > ion-toolbar {
+        --min-height: 0;
+        visibility: hidden;
+      }
+
+      ion-icon {
+        font-size: 2.8rem;
+        color: #ffffff;
+        border-radius: 20%;
+        padding: 6px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      ion-text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  ion-item-group,
+  ion-reorder-group,
+  ion-accordion-group,
+  ion-radio-group {
+    ion-item {
+      ion-text[slot='end'] {
+        padding-left: 8px;
+      }
+
+      &.item-disabled {
+        opacity: 1;
+
+        & > * {
+          opacity: 0.4;
+        }
+
+        &::part(detail-icon) {
+          opacity: 0.1;
+        }
+      }
+
+      ion-button[slot='end'] {
+        &.ion-align-self-end {
+          transform: translateY(-7px);
+        }
+        ion-icon[slot='icon-only'] {
+          font-size: 1.2rem !important;
+          transform: translateY(4px);
+        }
+      }
+    }
+  }
+
+  & > ion-note {
+    color: var(--ion-color-medium-tint);
+    font-size: 0.9rem;
+    display: block;
+    margin: 8px calc(20px + var(--ion-safe-area-right)) 8px calc(20px + var(--ion-safe-area-left));
+  }
+}

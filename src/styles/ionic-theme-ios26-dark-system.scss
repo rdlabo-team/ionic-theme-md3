@@ -1,0 +1,8 @@
+@use 'utils/theme-dark';
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark.default-variables;
+  }
+  @include theme-dark.theme-dark;
+}

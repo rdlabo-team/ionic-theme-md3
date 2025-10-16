@@ -1,0 +1,17 @@
+ion-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ion-content {
+  position: relative;
+  section.images {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    img {
+      border: 0.1px solid #fff;
+      border-top: none;
+    }
+  }
+}

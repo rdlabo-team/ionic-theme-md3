@@ -1,0 +1,25 @@
+@forward 'dark/ion-button';
+@use 'dark/ion-button' as *;
+@forward 'dark/ion-fab';
+@use 'dark/ion-fab' as *;
+@forward 'dark/ion-tabs';
+@use 'dark/ion-tabs' as *;
+@forward 'dark/ion-segment';
+@use 'dark/ion-segment' as *;
+
+@mixin default-variables {
+  //--ios26-glass-background-rgb: 35, 35, 35;
+  --ios26-glass-background-rgb: 62, 62, 62;
+  --ios26-glass-box-shadow-color-rgb: 0, 0, 0 / 0;
+  --ios26-glass-border-color-rgb: 68, 68, 68;
+  --ios26-button-color-selected-rgb: 255, 255, 255;
+
+  --ios26-content-box-shadow-rgb: 0, 0, 0;
+}
+
+@mixin theme-dark {
+  @include ion-button;
+  @include ion-fab;
+  @include ion-tabs;
+  @include ion-segment;
+}

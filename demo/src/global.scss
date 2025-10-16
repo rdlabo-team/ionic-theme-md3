@@ -1,0 +1,67 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@use '@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@use '@ionic/angular/css/normalize.css';
+@use '@ionic/angular/css/structure.css';
+@use '@ionic/angular/css/typography.css';
+@use '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@use '@ionic/angular/css/padding.css';
+@use '@ionic/angular/css/float-elements.css';
+@use '@ionic/angular/css/text-alignment.css';
+@use '@ionic/angular/css/text-transformation.css';
+@use '@ionic/angular/css/flex-utils.css';
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+//@use "@ionic/angular/css/palettes/dark.always.css";
+//@use '@ionic/angular/css/palettes/dark.system.css';
+@use '@ionic/angular/css/palettes/dark.class.css';
+
+@use '../../src/styles/default-variables';
+@use '../../src/styles/ionic-theme-ios26';
+@use '../../src/styles/ionic-theme-ios26-dark-class';
+@use '../../src/styles/md-ion-list-inset';
+@use '../../src/styles/md-remove-ios-class-effect';
+
+:root {
+  --ios26-content-box-shadow-rgb: var(--ion-color-light-rgb);
+}
+
+code {
+  font-family: Menlo, Consolas, monospace;
+}
+
+section.section-example {
+  background: var(--ion-background-color, #fff);
+  border-radius: 24px;
+  padding: 16px;
+  margin: 16px;
+}
+
+ion-footer {
+  ion-toolbar:last-of-type {
+    padding-bottom: calc(var(--ion-safe-area-bottom, 0px) - 12px);
+  }
+  ion-searchbar .searchbar-input-container {
+    margin: 0 20px !important;
+  }
+}

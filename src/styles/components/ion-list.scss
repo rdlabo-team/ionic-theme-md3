@@ -1,0 +1,43 @@
+@use '../utils/theme-list-inset';
+
+ion-list.ios:not(.ios26-disabled) {
+  ion-item {
+    --background-hover-opacity: 0;
+    --background-focused-opacity: 0;
+  }
+}
+
+ion-list.list-inset.ios:not(.ios26-disabled) {
+  @include theme-list-inset.ion-list-inset();
+
+  ion-radio-group,
+  ion-reorder-group {
+    display: block;
+  }
+
+  ion-item-group,
+  ion-reorder-group,
+  ion-accordion-group,
+  ion-radio-group {
+    border-radius: 24px;
+    overflow: hidden;
+
+    ion-item {
+      // To draw lines inside
+      --inner-padding-end: 0;
+      &::part(native) {
+        padding-right: calc(var(--ion-safe-area-right, 0px) + 18px);
+      }
+
+      --min-height: 52px;
+
+      & > ion-input[labelplacement='floating'] {
+        transition: transform 200ms ease;
+
+        &:not(.label-floating) {
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}

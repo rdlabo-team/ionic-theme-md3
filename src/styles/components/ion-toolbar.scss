@@ -1,0 +1,49 @@
+@use 'ion-button';
+
+/**
+ * https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/header/header.scss#L17-L19
+ * ion-header ion-toolbar:first-of-type {
+ *  padding-top: var(--ion-safe-area-top, 0);
+ * }
+ */
+ion-header.ios:not(.ios26-disabled) ion-toolbar:not(.ios26-disabled):first-of-type {
+  padding-top: max(calc(var(--ion-safe-area-top) - 12px), 4px);
+}
+
+ion-modal.ios:not(.ios26-disabled).modal-card,
+ion-modal.ios:not(.ios26-disabled).modal-sheet {
+  ion-header.ios:not(.ios26-disabled) ion-toolbar.ios:not(.ios26-disabled):first-of-type {
+    padding-top: 6px;
+  }
+}
+
+ion-header.ios.header-collapse-condense:not(.ios26-disabled) ion-toolbar:not(.ios26-disabled):first-of-type {
+  padding-top: 0;
+}
+
+ion-toolbar.ios:not(.toolbar-title-large):not(.ios26-disabled):not(:has(ion-segment.segment-expand)) {
+  --min-height: 68px;
+}
+
+ion-toolbar.ios:not(.ios26-disabled).toolbar-searchbar {
+  *[slot='start'],
+  *[slot='end'] {
+    align-self: center;
+  }
+}
+
+ion-header.ios:not(.ios26-disabled),
+ion-footer.ios:not(.ios26-disabled) {
+  ion-buttons {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  ion-back-button {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  ion-toolbar ion-buttons ion-back-button {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

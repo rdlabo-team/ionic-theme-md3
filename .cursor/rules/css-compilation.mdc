@@ -1,0 +1,34 @@
+---
+description: SCSS to CSS compilation process and build workflow
+globs: *.scss,*.css,package.json
+---
+
+# CSS Compilation Process
+
+## ビルドプロセス
+
+### ソースファイル
+- **入力**: `src/` ディレクトリ内のSCSSファイル
+- **メインファイル**: [src/ionic-theme-ios26.scss](mdc:src/ionic-theme-ios26.scss)
+
+### 出力ファイル
+- **出力**: `dist/css/` ディレクトリ内のCSSファイル
+- **生成ファイル**: 
+  - [dist/css/ionic-theme-ios26.min.css](mdc:dist/css/ionic-theme-ios26.min.css): メインCSSファイル（圧縮版）
+  - [dist/css/ionic-theme-ios26.min.css.map](mdc:dist/css/ionic-theme-ios26.min.css.map): ソースマップ
+  - [dist/css/md-ion-list-inset.min.css](mdc:dist/css/md-ion-list-inset.min.css): インセットリスト専用CSS（圧縮版）
+  - [dist/css/md-ion-list-inset.min.css.map](mdc:dist/css/md-ion-list-inset.min.css.map): ソースマップ
+
+## コンパイル時の注意事項
+
+1. **依存関係**: [package.json](mdc:package.json)でビルドツールの依存関係を確認
+2. **ソースマップ**: 開発時のデバッグ用にソースマップファイルも生成
+3. **最適化**: 本番用にはCSSの最適化（minify）を検討
+4. **テスト**: コンパイル後は`demo/`アプリケーションで動作確認
+
+## ファイル構造の一貫性
+
+- SCSSファイルは`src/`に配置
+- コンパイル後のCSSファイルは`dist/css/`に配置
+- デモアプリケーションは`demo/`に配置
+- スクリーンショットなどのリソースは`screenshots/`に配置
