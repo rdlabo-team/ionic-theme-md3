@@ -1,5 +1,7 @@
 # Ionic Theme Material Design 3
 
+__This is still in the early stages of development and is not yet available for use.__
+
 ## Development & Testing
 
 ### Demo Application

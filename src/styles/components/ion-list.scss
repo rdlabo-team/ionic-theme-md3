@@ -1,43 +1,43 @@
 @use '../utils/theme-list-inset';
 
-ion-list.ios:not(.ios26-disabled) {
-  ion-item {
-    --background-hover-opacity: 0;
-    --background-focused-opacity: 0;
+ion-list.md:not(.md3-disabled).list-inset {
+  @include theme-list-inset.ion-list-inset();
+
+  ion-item-group > ion-item {
+    --border-color: var(--ion-color-light, #fff);
+
+    &:not(.item-lines-inset):not(.item-lines-none) {
+      --border-radius: 4px;
+      --border-width: #{0px 0px 2px 0px};
+      --inner-border-width: 0;
+      --show-inset-highlight: 0;
+      --show-full-highlight: 1;
+    }
+
+    & > ion-input[labelplacement='floating'] {
+      transition: transform 200ms ease;
+
+      &:not(.label-floating) {
+        transform: translateY(-7px);
+      }
+
+      &.label-floating {
+        transform: translateY(-4px);
+      }
+    }
   }
 }
 
-ion-list.list-inset.ios:not(.ios26-disabled) {
-  @include theme-list-inset.ion-list-inset();
-
-  ion-radio-group,
-  ion-reorder-group {
-    display: block;
-  }
-
+ion-list.md:not(.md3-disabled).list-inset {
   ion-item-group,
   ion-reorder-group,
   ion-accordion-group,
   ion-radio-group {
-    border-radius: 24px;
+    border-radius: 16px;
     overflow: hidden;
-
-    ion-item {
-      // To draw lines inside
-      --inner-padding-end: 0;
-      &::part(native) {
-        padding-right: calc(var(--ion-safe-area-right, 0px) + 18px);
-      }
-
-      --min-height: 52px;
-
-      & > ion-input[labelplacement='floating'] {
-        transition: transform 200ms ease;
-
-        &:not(.label-floating) {
-          transform: translateY(-2px);
-        }
-      }
-    }
   }
+}
+
+ion-list-header.md:not(.md3-disabled) {
+  padding-left: calc(var(--ion-safe-area-left, 0px) + 4px);
 }
