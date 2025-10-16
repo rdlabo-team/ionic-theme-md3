@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withComponentInputBinding()),
     provideIonicAngular({
       useSetInputAPI: true,
-      mode: 'ios',
+      mode: 'md',
       backButtonText: '',
       animated: !isE2ETesting,
     }),
