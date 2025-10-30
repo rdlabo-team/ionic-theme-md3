@@ -19,9 +19,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "npm run build:css && npm run build:ts",
-    "build:css": "rm -rf dist/css && sass src/styles:dist/css --style=compressed --no-source-map",
-    "build:ts": "tsc",
+    "build": "rm -rf dist/css && sass src/styles:dist/css --style=compressed --no-source-map",
     "build:demo": "npm run build && cd demo && npm install && npm run build -- --configuration=production",
     "prepare": "husky install",
     "lint": "prettier --check \"./**/*.{scss,ts}\" &&  prettier --parser angular --check \"./**/*.html\"",
@@ -31,21 +29,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/rdlabo-team/ionic-theme-ios26.git"
+    "url": "git+ssh://git@github.com/rdlabo-team/ionic-theme-md3.git"
   },
   "keywords": [
     "ionic",
     "framework",
     "theme",
     "css",
-    "ios26"
+    "md3"
   ],
   "author": "Masahiko Sakakibara <sakakibara@rdlabo.jp>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rdlabo-team/ionic-theme-ios26/issues"
+    "url": "https://github.com/rdlabo-team/ionic-theme-md3/issues"
   },
-  "homepage": "https://github.com/rdlabo-team/ionic-theme-ios26#readme",
+  "homepage": "https://github.com/rdlabo-team/ionic-theme-md3#readme",
   "devDependencies": {
     "@ionic/angular": "^8.7.6",
     "husky": "^9.1.7",
