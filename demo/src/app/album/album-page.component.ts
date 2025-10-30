@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DOCUMENT, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -7,17 +7,34 @@ import {
   IonContent,
   IonFab,
   IonFabButton,
+  IonFooter,
   IonHeader,
   IonIcon,
+  IonSearchbar,
   IonTitle,
   IonToolbar,
+  ViewDidEnter,
 } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-album-page',
   templateUrl: './album-page.component.html',
   styleUrls: ['./album-page.component.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonIcon, IonButton, IonButtons, IonFab, IonFabButton],
+  imports: [
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    IonIcon,
+    IonButton,
+    IonButtons,
+    IonFab,
+    IonFabButton,
+    IonFooter,
+    IonSearchbar,
+  ],
 })
 export class AlbumPage {
   readonly sourceIonIcons = [...Array(60)].map((_, i) => i);

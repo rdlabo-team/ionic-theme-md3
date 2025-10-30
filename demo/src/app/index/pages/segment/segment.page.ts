@@ -20,7 +20,6 @@ import {
   ViewDidEnter,
   ViewDidLeave,
 } from '@ionic/angular/standalone';
-import { registeredEffect, registerSegmentEffect, registerTabBarEffect } from '../../../../../../src';
 
 @Component({
   selector: 'app-segment',
@@ -46,23 +45,4 @@ import { registeredEffect, registerSegmentEffect, registerTabBarEffect } from '.
     IonButton,
   ],
 })
-export class SegmentPage implements OnInit, ViewDidEnter, ViewDidLeave {
-  readonly #el = inject(ElementRef);
-  readonly registeredGestures: registeredEffect[] = [];
-  constructor() {}
-
-  ngOnInit() {}
-
-  ionViewDidEnter() {
-    this.#el.nativeElement.querySelectorAll('ion-segment:not(.segment-expand)').forEach((item: HTMLElement) => {
-      const registerGesture = registerSegmentEffect(item);
-      if (registerGesture) {
-        this.registeredGestures.push(registerGesture);
-      }
-    });
-  }
-
-  ionViewDidLeave() {
-    this.registeredGestures.forEach((gesture) => gesture.destroy());
-  }
-}
+export class SegmentPage {}
