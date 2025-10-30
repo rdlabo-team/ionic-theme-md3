@@ -1,56 +1,41 @@
 @use '../utils/api';
 
-/**
- * Adjustments have been made to prevent the right edge from being cut off within the ion-item.
- * When the native-inner part be added to the ion-item, it will be removed.
- */
-ion-item.ios:not(.ios26-disabled) ion-toggle.ios:not(.ios26-disabled) {
-  &.toggle-checked.toggle-activated::part(track) {
-    transform-origin: left;
-    transform: scaleX(0.894);
-  }
-  &.toggle-activated::part(handle) {
-    transform: scale(1.4, 1.6) translateX(calc(38px * -0.15));
-  }
-}
-
-ion-toggle.ios:not(.ios26-disabled) {
-  --handle-width: 38px;
+ion-toggle.md:not(.md3-disabled) {
+  --handle-width: 24px;
   --handle-height: 24px;
-  --handle-max-width: none;
-  --handle-max-height: none;
-  --track-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.23);
+  --handle-border-radius: 16px;
+  --border-radius: 16px;
+  --handle-box-shadow: none;
+  --handle-spacing: 2px;
+
   &::part(track) {
-    overflow: visible;
-    width: 64px;
-    height: 28px;
-    transition: transform 280ms ease;
+    box-sizing: border-box;
+    min-height: 32px;
+    min-width: 52px;
+    border: 2px solid var(--ion-text-color-step-450, #79747e);
+    background: var(--ion-background-color-step-100, #e6e0e9);
   }
-  &.toggle-activated:not(.toggle-checked)::part(handle) {
-    transform: translateX(-4px) scale(1.4, 1.6);
+
+  &.toggle-checked::part(track) {
+    border-color: var(--ion-color-base);
+    background: var(--ion-color-base);
   }
-  &.toggle-activated::part(handle) {
-    transform: scale(1.4, 1.6);
-    @include api.glass-background(0.1, 0.5px, 120%);
-    transition:
-      transform 280ms,
-      width 120ms ease-in-out 80ms,
-      left 110ms ease-in-out 80ms,
-      right 110ms ease-in-out 80ms;
-    box-shadow: inset 0 0 8px 0 var(--track-background);
+
+  &::part(handle) {
+    background: var(--ion-text-color-step-450, #79747e);
   }
-  &.ion-color.toggle-checked.toggle-activated::part(handle) {
-    box-shadow:
-      inset 0 8px 8px -8px var(--ion-color-base),
-      inset 8px 0 8px -8px var(--track-background),
-      inset 8px 0 8px -8px var(--track-background),
-      inset -8px 0 8px -8px var(--ion-color-base);
+
+  &.toggle-checked::part(handle) {
+    background: var(--ion-color-contrast);
   }
-  &.toggle-checked.toggle-activated::part(handle) {
-    box-shadow:
-      inset 0 8px 8px -8px var(--track-background-checked),
-      inset 8px 0 8px -8px var(--track-background),
-      inset 8px 0 8px -8px var(--track-background),
-      inset -8px 0 8px -8px var(--track-background-checked);
+
+  &:not(.ion-color) {
+    &.toggle-checked::part(track) {
+      border-color: var(--ion-color-primary);
+      background: var(--ion-color-primary);
+    }
+    &.toggle-checked::part(handle) {
+      background: var(--ion-color-primary-contrast);
+    }
   }
 }
