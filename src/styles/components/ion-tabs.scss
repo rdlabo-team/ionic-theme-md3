@@ -1,115 +1,28 @@
-@use '../utils/api';
-
-ion-tab-bar.ios:not(.ios26-disabled) {
-  @include api.glass-background;
-  z-index: 2;
-
-  border-radius: 40px;
-  --color: rgb(var(--ion-text-color-rgb, 0, 0, 0));
-
-  &[slot='top'] {
-    position: absolute;
-    top: var(--ios26-floating-safe-area-top);
-    right: calc(16px + var(--ion-safe-area-right, 0px));
-  }
-
-  &[slot='bottom'] {
-    position: absolute;
-    bottom: var(--ios26-floating-safe-area-bottom);
-    left: calc(16px + var(--ion-safe-area-left, 0px));
-  }
-
-  /**
-   * 100% - margin-left - margin-right - right-fab - margin-left-fab
-   */
-  width: calc(100% - calc(18px + var(--ion-safe-area-left, 0px)) - calc(18px + var(--ion-safe-area-left, 0px)) - 60px - 12px);
-  max-width: 474px;
-  min-height: 56px;
-  &:has(:nth-child(5)) {
-    width: calc(100% - calc(18px + var(--ion-safe-area-left, 0px)) - calc(18px + var(--ion-safe-area-left, 0px)));
-    max-width: 546px;
-  }
-  padding: 2px 2px;
-
-  transition: transform var(--ios26-activated-transition-duration) ease-out;
-  will-change: transform;
-  &:has(ion-tab-button.ion-activated) {
-    transform: scale(1.038);
-  }
-
-  &:has(ion-tab-button.ion-activated) {
-    ion-tab-button.tab-selected:not(.ion-activated) {
-      --color-selected: rgb(var(--ion-text-color-rgb, 0, 0, 0));
-    }
-  }
-
-  /**
-   * effectが有効な場合、effectでスタイリングするため不要
-   */
-  &.ios26-enable-gesture.ios26-animated {
-    ion-tab-button.tab-selected::part(native) {
-      background: rgba(var(--ios26-button-color-selected-rgb), 0);
-    }
-    ion-tab-button.ion-activated {
-      ion-label,
-      ion-icon {
-        filter: brightness(100%);
+ion-tab-bar.md:not(.md3-disabled) {
+  height: 56px;
+  ion-tab-button {
+    --ripple-color: transparent;
+    --color-selected: var(--ion-color-contrast, var(--ion-color-primary-shade));
+    ion-icon {
+      padding: 4px 16px;
+      border-radius: 16px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(var(--ion-color-contrast-rgb, var(--ion-color-primary-rgb, 2, 137, 255)), 0.2);
+        transform: scaleX(0);
+        transition: transform 0.08s ease-out;
+        z-index: -1;
       }
     }
-  }
-}
-
-ion-tab-button.ios:not(.ios26-disabled) {
-  ion-icon {
-    font-size: 26px;
-  }
-  ion-label,
-  ion-icon {
-    transition:
-      filter var(--ios26-activated-transition-duration) ease,
-      color var(--ios26-activated-transition-duration) ease;
-  }
-  background: rgba(var(--ios26-glass-background-rgb), 0);
-  height: auto;
-  transition: transform var(--ios26-activated-transition-duration) ease;
-  &::part(native) {
-    overflow: visible;
-    min-height: 56px;
-    border-radius: 32px;
-  }
-
-  &.ion-activated {
-    transform: scale(1.1);
-    position: relative;
-    color: var(--color-selected);
-    ion-label,
-    ion-icon {
-      filter: brightness(104%);
-    }
-  }
-
-  &.tab-selected {
-    &::part(native) {
-      background: rgba(var(--ios26-button-color-selected-rgb), 0.095);
-      transition: background var(--ios26-activated-transition-duration) ease;
-    }
-
-    &.ion-activated::part(native) {
-      background: rgba(var(--ios26-glass-box-shadow-color-rgb), 0.02);
-    }
-  }
-
-  &.ion-cloned-element {
-    &::part(native) {
-      @include api.glass-background(0, 0, 104%);
-    }
-    pointer-events: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform-origin: center;
-    & > * {
-      visibility: hidden;
+    &.tab-selected {
+      ion-icon::before {
+        transform: scaleX(1);
+      }
     }
   }
 }
