@@ -1,36 +1,9 @@
 @use '../utils/api';
 
-ion-modal.ios {
-  ion-searchbar:not(.ios26-disabled) {
-    .searchbar-input-container {
-      input.searchbar-input {
-        // Modal表示でのアイコン非表示の不具合の対応
-        backdrop-filter: none;
-      }
-    }
-  }
-}
-
-ion-searchbar.ios:not(.ios26-disabled) {
-  min-height: 60px;
-  padding: 0;
-
-  ion-icon.searchbar-search-icon {
-    inset-inline-start: 12px;
-  }
-
-  .searchbar-input-container {
-    margin: 0 8px 0 16px;
-    align-self: center;
-    justify-self: center;
-    input.searchbar-input {
-      min-height: 44px;
-      @include api.glass-background;
-      border-radius: 20px;
-      padding-inline-start: 2.4rem !important;
-    }
-    .searchbar-clear-button {
-      padding-inline-end: 2rem;
-    }
-  }
+ion-searchbar.md:not(.md3-disabled) {
+  --box-shadow: none;
+  --border-radius: 999px;
+  --background: rgba(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.08);
+  --color: rgb(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)));
+  --icon-color: rgb(var(--ion-color-contrast-rgb, var(--ion-text-color-rgb, 0, 0, 0)));
 }
