@@ -1,17 +1,113 @@
 @use '../utils/api';
 
 @mixin theme-buttons {
+  ion-button.md:not(.md3-disabled) {
+    --border-radius: 999px;
+
+    &::part(native) {
+      height: 48px;
+    }
+    &.button-has-icon-only {
+      &::part(native) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
 }
 
 @mixin theme-button() {
+  // Default is be round button
+  --box-shadow: none;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --border-radius: 999px;
+
+  &.button-square {
+    --border-radius: 12px;
+  }
+
+  &::part(native) {
+    height: 40px;
+  }
+  &.button-has-icon-only {
+    &::part(native) {
+      width: 40px;
+      height: 40px;
+    }
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  ion-icon {
+    font-size: 20px;
+    &[slot='start'] {
+      margin-inline-start: 0;
+      margin-inline-end: 8px;
+    }
+    &[slot='end'] {
+      margin-inline-start: 8px;
+      margin-inline-end: 0;
+    }
+  }
+
+  &.button-small {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    &::part(native) {
+      height: 32px;
+    }
+    &.button-has-icon-only::part(native) {
+      width: 32px;
+      height: 32px;
+    }
+    ion-icon {
+      font-size: 20px;
+      &[slot='start'] {
+        margin-inline-start: 0;
+        margin-inline-end: 4px;
+      }
+      &[slot='end'] {
+        margin-inline-start: 4px;
+        margin-inline-end: 0;
+      }
+    }
+  }
+
+  &.button-large {
+    --padding-start: 24px;
+    --padding-end: 24px;
+
+    &.button-square {
+      --border-radius: 16px;
+    }
+
+    &::part(native) {
+      height: 56px;
+    }
+    &.button-has-icon-only::part(native) {
+      width: 56px;
+      height: 56px;
+    }
+    ion-icon {
+      font-size: 24px;
+      &[slot='start'] {
+        margin-inline-start: 0;
+        margin-inline-end: 8px;
+      }
+      &[slot='end'] {
+        margin-inline-start: 8px;
+        margin-inline-end: 0;
+      }
+    }
+  }
 }
 
-ion-buttons.md:not(.ios26-disabled):not(:has(ion-back-button, ion-button:not(.button-clear))) {
+ion-buttons.md:not(.md3-disabled) {
   @include theme-buttons;
 }
-ion-button.md:not(.ios26-disabled) {
+ion-button.md:not(.md3-disabled) {
   @include theme-button;
 }
-ion-back-button.md:not(.ios26-disabled) {
-  @include theme-button;
+ion-back-button.md:not(.md3-disabled) {
+  //@include theme-button;
 }
