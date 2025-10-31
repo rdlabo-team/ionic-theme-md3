@@ -1,0 +1,19 @@
+ion-chip.md:not(.md3-disabled) {
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
+  border-radius: 8px;
+
+  ion-icon {
+    font-size: 18px;
+
+    &:first-child {
+      margin-inline-start: -8px;
+      margin-inline-end: 8px;
+    }
+
+    &:last-child {
+      margin-inline-start: 8px;
+      margin-inline-end: -8px;
+    }
+  }
+}
