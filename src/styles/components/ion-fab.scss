@@ -1,53 +1,40 @@
 @use '../utils/api';
 
-ion-fab.ios:not(.ios26-disabled) {
+ion-fab.md:not(.md3-disabled) {
   ion-fab-button {
-    --transition:
-      var(--ios26-activated-transition-duration) transform cubic-bezier(0.25, 1.11, 0.78, 1.59),
-      var(--ios26-activated-transition-duration) color ease;
-    --background-activated-opacity: 0;
-    --background-focused-opacity: 0;
-    --background-hover-opacity: 0;
+    width: 56px;
+    height: 56px;
+    --border-radius: 16px;
+    --transition: border-radius var(--token-expressive-fast-special);
+    --box-shadow: var(--token-elevation-3);
 
-    --color: rgb(var(--ion-text-color-rgb, 0, 0, 0));
-
-    /**
-     * 60px + border0.5px + 0.5px
-     */
-    width: 61px;
-    height: 61px;
-
-    &.fab-button-in-list,
-    &.fab-button-small {
-      width: 48px;
-      height: 48px;
+    ion-icon {
+      width: 24px;
+      height: 24px;
     }
 
-    &.ion-activated {
-      --color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
-      &.ion-color {
-        --color: rgba(var(--ion-color-base-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.1);
+    &.fab-button-close-active {
+      --border-radius: 50%;
+    }
+
+    &.fab-button-in-list {
+      --border-radius: 50%;
+    }
+
+    &.fab-button-small {
+      width: 40px;
+      height: 40px;
+      --border-radius: 12px;
+      &.fab-button-close-active {
+        --border-radius: 50%;
       }
     }
+  }
 
-    &::part(native) {
-      @include api.glass-background;
+  &:has(.fab-button-small) {
+    ion-fab-button {
+      width: 40px;
+      height: 40px;
     }
-  }
-
-  &.fab-vertical-top {
-    top: var(--ios26-floating-safe-area-top);
-  }
-
-  &.fab-vertical-bottom {
-    bottom: var(--ios26-floating-safe-area-bottom);
-  }
-
-  &.fab-horizontal-start {
-    right: calc(16px + var(--ion-safe-area-left, 0px));
-  }
-
-  &.fab-horizontal-end {
-    right: calc(16px + var(--ion-safe-area-right, 0px));
   }
 }
