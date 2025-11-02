@@ -1,65 +1,29 @@
 @use '../utils/api';
 
-ion-alert.ios:not(.ios26-disabled) {
+ion-alert.md:not(.md3-disabled) {
   --backdrop-opacity: 0.2;
-
-  // --max-width: clamp(270px, 16.875rem, 324px);
-  --max-width: 322px;
-
+  --min-width: 280px;
+  --max-width: 560px;
   transition: transform 200ms ease;
-  &:has(.ion-activated) {
-    transform: scale(1.016);
-  }
 
   .alert-wrapper {
-    @include api.glass-background-overlay;
-    &:has(.ion-activated) {
-      @include api.glass-background-overlay-activated;
-    }
-    border-radius: 32px;
+    border-radius: 24px;
 
-    .alert-head,
+    .alert-head {
+      padding-top: 24px;
+      padding-bottom: 16px;
+    }
+
+    .alert-radio-group,
+    .alert-checkbox-group {
+      border: none;
+    }
+
     .alert-message {
-      text-align: left;
-      margin-left: 14px;
-      margin-right: 14px;
-    }
-
-    .alert-message {
-      font-size: 0.98rem;
-      line-height: 1.2rem;
-      color: var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));
-    }
-
-    .alert-radio-group {
-      padding: 0;
-      margin-bottom: 12px;
-      button {
-        padding: 0 8px;
+      padding-bottom: 24px;
+      &:empty {
+        padding-bottom: 0;
       }
-    }
-
-    .alert-button-group {
-      padding: 0 8px 12px;
-      gap: 8px 0;
-      .alert-button {
-        @include api.glass-background-overlay-button;
-        border: none;
-        border-radius: 32px;
-        margin: 0 6px;
-        min-width: calc(50% - 12px);
-        // height: max(44px, 2.75rem);
-        height: 48px;
-
-        &:not(.alert-button-role-destructive) {
-          color: var(--ion-text-color, #000);
-        }
-        font-weight: 550;
-      }
-    }
-
-    button.action-sheet-cancel {
-      margin-top: 12px;
     }
   }
 }
