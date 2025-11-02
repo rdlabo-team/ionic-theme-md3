@@ -1,5 +1,6 @@
-ion-card.ios:not(.ios26-disabled) {
-  border-radius: 24px;
+ion-card.md:not(.md3-disabled) {
+  border-radius: 12px;
+  box-shadow: var(--token-elevation-1);
 
   ion-list ion-item {
     --padding-start: 0;
