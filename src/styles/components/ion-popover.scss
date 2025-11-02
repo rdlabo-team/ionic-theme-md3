@@ -1,2 +1,12 @@
 ion-popover.md:not(.md3-disabled) {
+  --box-shadow: var(--token-elevation-3);
+  &::part(content) {
+    border-radius: 12px;
+  }
+
+  ion-select-popover {
+    ion-list {
+      padding: 0;
+    }
+  }
 }

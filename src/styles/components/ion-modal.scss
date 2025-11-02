@@ -1,4 +1,8 @@
 ion-modal.md:not(.md3-disabled) {
+  --box-shadow: var(--token-elevation-3);
+  @media only screen and (min-width: 768px) and (min-height: 600px) {
+    --border-radius: 24px;
+  }
   ion-toolbar {
     padding-top: 6px;
     --min-height: calc(64px - 6px);
