@@ -1,24 +1,2 @@
-@use '../utils/api';
-
-ion-popover.ios:not(.ios26-disabled) {
-  --backdrop-opacity: 0.2;
-  &::part(arrow) {
-    display: none;
-    ::after {
-      //@include api.glass-background;
-    }
-  }
-  &::part(content) {
-    @include api.glass-background;
-    border-radius: 24px;
-    padding: 0;
-  }
-  ion-select-popover {
-    ion-list {
-      background: transparent;
-      ion-item {
-        --background: transparent;
-      }
-    }
-  }
+ion-popover.md:not(.md3-disabled) {
 }
