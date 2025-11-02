@@ -1,2 +1,17 @@
 ion-action-sheet.md:not(.md3-disabled) {
+  --max-width: 640px !important;
+
+  .action-sheet-container {
+    overflow: hidden;
+    border-radius: 28px 28px 0 0;
+    box-shadow: var(--token-elevation-1);
+
+    .action-sheet-title {
+      padding: 24px 24px 16px;
+    }
+
+    .action-sheet-button {
+      padding: 12px 24px;
+    }
+  }
 }
