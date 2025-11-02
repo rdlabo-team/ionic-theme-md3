@@ -18,4 +18,8 @@
   --token-expressive-fast-special: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.9);
   --token-expressive-default-special: 500ms cubic-bezier(0.38, 1.21, 0.22, 1);
   --token-expressive-slow-special: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98);
+
+  --token-expressive-fast-effects: 150ms cubic-bezier(0.31, 0.94, 0.34, 1);
+  --token-expressive-default-effects: 200ms cubic-bezier(0.34, 0.8, 0.34, 1);
+  --token-expressive-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1);
 }

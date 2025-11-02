@@ -7,6 +7,7 @@ ion-toggle.md:not(.md3-disabled) {
   --border-radius: 16px;
   --handle-box-shadow: none;
   --handle-spacing: 2px;
+  --handle-transition: transform var(--token-expressive-default-special), background-color var(--token-expressive-default-effects);
 
   &::part(track) {
     box-sizing: border-box;

@@ -15,7 +15,7 @@ ion-tab-bar.md:not(.md3-disabled) {
         height: 100%;
         background-color: rgba(var(--ion-color-contrast-rgb, var(--ion-color-primary-rgb, 2, 137, 255)), 0.2);
         transform: scaleX(0);
-        transition: transform var(--token-expressive-fast-special);
+        transition: transform var(--token-expressive-fast-effects);
         z-index: -1;
       }
     }
