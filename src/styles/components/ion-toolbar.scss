@@ -2,3 +2,19 @@ ion-header.md:not(.md3-disabled),
 ion-footer.md:not(.md3-disabled) {
   box-shadow: none;
 }
+
+ion-header.md:not(.md3-disabled),
+ion-footer.md:not(.md3-disabled) {
+  ion-buttons {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  ion-back-button {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  ion-toolbar ion-buttons ion-back-button {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
