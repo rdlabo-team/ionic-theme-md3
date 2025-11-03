@@ -2,17 +2,6 @@
   "name": "@rdlabo/ionic-theme-md3",
   "version": "0.0.0",
   "description": "Material Design 3 Theme for Ionic Framework",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./dist/css/*": "./dist/css/*",
-    "./src/styles/*": "./src/styles/*"
-  },
   "files": [
     "dist",
     "src",
