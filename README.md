@@ -12,6 +12,10 @@ This library provides CSS/JS files that bring the Material Design 3 design syste
 
 This project aims to follow the core concepts of Ionic as closely as possible, while placing a strong emphasis on compatibility with `@rdlabo/ionic-theme-ios26`. Just as Ionic provides beautiful styling whether it displays the ios or md theme from a single HTML structure, our goal is to ensure that this theme and `@rdlabo/ionic-theme-ios26` are fully compatible.
 
+If you don't know about `@rdlabo/ionic-theme-ios26`, you should definitely give it a try!
+
+👉️[rdlabo-team/ionic-theme-ios26](https://github.com/rdlabo-team/ionic-theme-ios26)
+
 ### Related Projects
 
 If you need a more comprehensive Material Design 3 implementation, you may also be interested in:
