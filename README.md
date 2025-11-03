@@ -1,7 +1,10 @@
 # Ionic Theme Material Design 3
 
-> **⚠️ Early Development**  
-> This project is still in the early stages of development and is not yet available for use.
+A CSS/JS theme library that applies Material Design 3 design system to Ionic applications.
+
+![](screenshots/md3.png)
+
+DEMO is here: https://ionic-theme-md3.netlify.app/
 
 ## Overview
 
@@ -25,6 +28,21 @@ Sponsoring means you directly contribute to new features, improvements, and main
 
 [Become a Sponsor →](https://github.com/sponsors/rdlabo)
 
+
+## Setup
+
+This is a CSS theme for extending your Ionic project. It does not work on its own, so use it together with the Ionic Framework.
+
+```bash
+npm install @rdlabo/ionic-theme-md3
+```
+
+And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
+
+```css
+@import '@rdlabo/ionic-theme-md3/dist/css/default-variables.css';
+@import '@rdlabo/ionic-theme-md3/dist/css/ionic-theme-md3.css';
+```
 
 ## Development & Testing
 
