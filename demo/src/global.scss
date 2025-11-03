@@ -40,10 +40,6 @@
 @use '../../src/styles/ionic-theme-md3';
 @use '../../src/styles/md-remove-ios-class-effect';
 
-:root {
-  --ios26-content-box-shadow-rgb: var(--ion-color-light-rgb);
-}
-
 code {
   font-family: Menlo, Consolas, monospace;
 }

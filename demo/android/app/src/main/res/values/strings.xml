@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">theme-md3</string>
+    <string name="title_activity_main">theme-md3</string>
+    <string name="package_name">io.ionic.theme.md3</string>
+    <string name="custom_url_scheme">io.ionic.theme.md3</string>
+</resources>

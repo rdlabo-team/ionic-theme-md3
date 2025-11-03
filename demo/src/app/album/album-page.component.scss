@@ -16,6 +16,11 @@ ion-content {
   }
 }
 
-ion-footer > ion-toolbar {
-  margin-bottom: 8px;
+ion-footer {
+  &.md {
+    display: none;
+  }
+  ion-toolbar {
+    margin-bottom: 8px;
+  }
 }
