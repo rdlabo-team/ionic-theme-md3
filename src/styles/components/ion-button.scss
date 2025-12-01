@@ -99,6 +99,6 @@ ion-back-button.md:not(.md3-disabled) {
   --padding-start: 16px;
   --padding-end: 16px;
   &::part(native) {
-    height: 40px;
+    min-height: 40px;
   }
 }
