@@ -1,7 +1,7 @@
 ion-alert.md:not(.md3-disabled) {
   --backdrop-opacity: 0.2;
   --min-width: 280px;
-  --max-width: 560px;
+  --max-width: min(560px, calc(100% - 48px * 2));
   transition: transform 200ms ease;
 
   .alert-wrapper {
