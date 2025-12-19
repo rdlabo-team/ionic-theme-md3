@@ -1,6 +1,6 @@
 {
   "name": "@rdlabo/ionic-theme-md3",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Material Design 3 Theme for Ionic Framework",
   "files": [
     "dist",
