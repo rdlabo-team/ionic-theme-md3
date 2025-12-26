@@ -5,27 +5,10 @@
   --padding-end: 16px;
   --border-radius: 999px;
 
-  &.button-square {
-    --border-radius: 12px;
-  }
-
   &::part(native) {
     height: 40px;
   }
-  &.button-has-icon-only {
-    &::part(native) {
-      width: 40px;
-      height: 40px;
-    }
-    --padding-start: 0;
-    --padding-end: 0;
 
-    ion-icon {
-      &[name='close-outline'] {
-        font-size: 2rem;
-      }
-    }
-  }
   ion-icon {
     font-size: 24px;
     &[slot='start'] {
@@ -87,6 +70,25 @@
         margin-inline-end: 0;
       }
     }
+  }
+
+  &.button-has-icon-only {
+    &::part(native) {
+      width: 40px;
+      height: 40px;
+    }
+    --padding-start: 0;
+    --padding-end: 0;
+
+    ion-icon {
+      &[name='close-outline'] {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &.button-square {
+    --border-radius: 12px;
   }
 }
 
