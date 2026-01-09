@@ -25,6 +25,9 @@ ion-modal.md:not(.md3-disabled) {
   &.modal-sheet {
     --border-radius: 30px;
     ion-toolbar {
+      &:first-of-type {
+        padding-top: 0;
+      }
       padding-right: calc(var(--ion-safe-area-right) + 4px);
       padding-left: calc(var(--ion-safe-area-left) + 4px);
     }
