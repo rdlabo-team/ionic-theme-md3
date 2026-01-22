@@ -4,8 +4,8 @@ import type { TransitionOptions } from './index';
 import { getIonPageElement } from './index';
 
 export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): Animation => {
-  const OFF_BOTTOM = '40px';
-  const CENTER = '0px';
+  const OFF_BOTTOM = 40;
+  const CENTER = 0;
 
   const backDirection = opts.direction === 'back';
   const enteringEl = opts.enteringEl;
@@ -24,7 +24,7 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
     rootTransition
       .duration((opts.duration ?? 0) || 280)
       .easing('cubic-bezier(0.36,0.66,0.04,1)')
-      .fromTo('transform', `translateX(${OFF_BOTTOM})`, `translateX(${CENTER})`)
+      .fromTo('transform', `translateX(${OFF_BOTTOM}px)`, `translateX(${CENTER}px)`)
       .fromTo('opacity', 0.01, 1);
   }
 
@@ -33,6 +33,26 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
     const enteringToolBar = createAnimation();
     enteringToolBar.addElement(enteringToolbarEle);
     rootTransition.addAnimation(enteringToolBar);
+  }
+
+  if (leavingEl) {
+    const stackedTransition = createAnimation();
+    const stackedElement = getIonPageElement(leavingEl);
+    const stackedAnimationElement = stackedElement.querySelectorAll('ion-toolbar, ion-content > *');
+    if (!backDirection) {
+      stackedTransition.addElement(stackedAnimationElement);
+      stackedTransition
+        .duration((opts.duration ?? 0) || 280)
+        .easing('cubic-bezier(0.36,0.66,0.04,1)')
+        .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_BOTTOM * -1}px)`);
+    } else if (backDirection) {
+      stackedTransition.addElement(ionPageElement);
+      stackedTransition
+        .duration((opts.duration ?? 0) || 200)
+        .easing('cubic-bezier(0.36,0.66,0.04,1)')
+        .fromTo('transform', `translateX(${OFF_BOTTOM * -1}px)`, `translateX(${CENTER}px)`);
+    }
+    rootTransition.addAnimation(stackedTransition);
   }
 
   // setup leaving view
@@ -48,7 +68,7 @@ export const mdTransitionAnimation = (_: HTMLElement, opts: TransitionOptions): 
           leavingPage.elements[0].style.setProperty('display', 'none');
         }
       })
-      .fromTo('transform', `translateX(${CENTER})`, `translateX(${OFF_BOTTOM})`)
+      .fromTo('transform', `translateX(${CENTER}px)`, `translateX(${OFF_BOTTOM}px)`)
       .fromTo('opacity', 1, 0);
 
     rootTransition.addAnimation(leavingPage);
