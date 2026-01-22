@@ -5,6 +5,7 @@ import * as allIcons from 'ionicons/icons';
 import { routes } from './app.routes';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
+import { mdTransitionAnimation } from '../../../src';
 
 addIcons(allIcons);
 
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       useSetInputAPI: true,
       mode: 'md',
       backButtonText: '',
+      navAnimation: mdTransitionAnimation,
       animated: !isE2ETesting,
     }),
   ],
