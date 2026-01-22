@@ -38,6 +38,24 @@ ion-range.md:not(.md3-disabled) {
     margin-right: 6px;
   }
 
+  &.range-value-min {
+    &::part(bar) {
+      border-top-left-radius: calc(var(--knob-border-radius) / 2);
+      border-bottom-left-radius: calc(var(--knob-border-radius) / 2);
+      width: calc(100% - 6px);
+      right: 0;
+    }
+  }
+
+  &.range-value-max {
+    &::part(bar) {
+      border-top-right-radius: calc(var(--knob-border-radius) / 2);
+      border-bottom-right-radius: calc(var(--knob-border-radius) / 2);
+      width: calc(100% - 6px);
+      left: 0;
+    }
+  }
+
   &[dual-knobs]::part(bar-active) {
     border-radius: calc(var(--knob-border-radius) / 2);
     margin-left: 6px;
