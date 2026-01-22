@@ -26,6 +26,9 @@ ion-range.md:not(.md3-disabled) {
   &.ion-color::part(knob) {
     background: var(--ion-color-base, var(--ion-color-primary));
   }
+  &.range-pressed::part(knob) {
+    width: 2px;
+  }
 
   &::part(tick),
   &::part(tick-active) {

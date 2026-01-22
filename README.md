@@ -48,6 +48,33 @@ And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
 @import '@rdlabo/ionic-theme-md3/dist/css/ionic-theme-md3.css';
 ```
 
+
+Next, configure the animations for MD3. Add the following to your Ionic configuration options.
+
+```ts
+import { isPlatform } from '@ionic/core'; // or @ionic/angular/standalone, @ionic/react, @ionic/vue
+import { mdTransitionAnimation } from '@rdlabo/ionic-theme-md3';
+
+// Angular
+provideIonicAngular({
+    ...
+    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+});
+
+// React
+setupIonicReact({
+    ...
+    navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+});
+
+// Vue
+createApp(App)
+    .use(IonicVue, {
+        ...
+        navAnimation: isPlatform('ios') ? undefined: mdTransitionAnimation,
+})
+```
+
 ## Development & Testing
 
 ### Demo Application

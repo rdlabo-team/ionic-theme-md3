@@ -5,6 +5,16 @@
   --padding-end: 16px;
   --border-radius: 999px;
 
+  &:not(.button-round) {
+    /**
+     * for remove default style:
+     * .sc-ion-buttons-md-s ion-button:not(.button-round) {
+     *   --border-radius: 2px;
+     * }
+     */
+    --border-radius: 999px;
+  }
+
   &::part(native) {
     height: 40px;
   }
@@ -48,10 +58,6 @@
     --padding-start: 24px;
     --padding-end: 24px;
 
-    &.button-square {
-      --border-radius: 16px;
-    }
-
     &::part(native) {
       height: 56px;
     }
@@ -82,7 +88,10 @@
   }
 
   &.button-square {
-    --border-radius: 12px;
+    --border-radius: 8px;
+    &.button-square {
+      --border-radius: 12px;
+    }
   }
 }
 

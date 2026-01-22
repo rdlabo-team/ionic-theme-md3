@@ -1,14 +1,27 @@
 {
   "name": "@rdlabo/ionic-theme-md3",
-  "version": "0.0.19",
+  "version": "1.0.2",
   "description": "Material Design 3 Theme for Ionic Framework",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./dist/css/*": "./dist/css/*",
+    "./src/styles/*": "./src/styles/*"
+  },
   "files": [
     "dist",
     "src",
     "package.json"
   ],
   "scripts": {
-    "build": "rm -rf dist/css && sass src/styles:dist/css --style=compressed --no-source-map",
+    "build": "npm run build:css && npm run build:ts",
+    "build:css": "rm -rf dist/css && sass src/styles:dist/css --style=compressed --no-source-map",
+    "build:ts": "tsc",
     "build:demo": "npm run build && cd demo && npm install && npm run build -- --configuration=production",
     "lint": "prettier --check \"./**/*.{scss,ts}\" &&  prettier --parser angular --check \"./**/*.html\"",
     "fmt": "prettier --write \"./**/*.{scss,ts}\" &&  prettier --parser angular --write \"./**/*.html\"",
