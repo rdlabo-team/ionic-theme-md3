@@ -49,7 +49,7 @@ And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
 ```
 
 
-Next, configure the animations for iOS 26. Add the following to your Ionic configuration options.
+Next, configure the animations for MD3. Add the following to your Ionic configuration options.
 
 ```ts
 import { isPlatform } from '@ionic/core'; // or @ionic/angular/standalone, @ionic/react, @ionic/vue
