@@ -1,5 +1,5 @@
 import { Component, ElementRef, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import {
   Gesture,
@@ -30,7 +30,6 @@ import {
     IonContent,
     IonHeader,
     IonToolbar,
-    CommonModule,
     FormsModule,
     IonBackButton,
     IonIcon,
