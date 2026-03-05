@@ -23,6 +23,11 @@ ion-range.md:not(.md3-disabled) {
       content: none;
     }
   }
+
+  &:not(.range-value-min):not(.range-value-max)::part(knob) {
+    outline: 6px solid var(--ion-background-color, #ffffff);
+  }
+
   &.ion-color::part(knob) {
     background: var(--ion-color-base, var(--ion-color-primary));
   }
