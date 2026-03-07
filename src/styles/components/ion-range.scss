@@ -16,7 +16,9 @@ ion-range.md:not(.md3-disabled) {
 
   &::part(knob) {
     width: 4px;
-    transition: width var(--token-expressive-fast-effects), transform var(--token-expressive-fast-effects);
+    transition:
+      width var(--token-expressive-fast-effects),
+      transform var(--token-expressive-fast-effects);
     will-change: width;
     height: var(--knob-size);
     background: var(--ion-color-primary);
@@ -43,6 +45,7 @@ ion-range.md:not(.md3-disabled) {
 
     &:not(.range-value-min):not(.range-value-max)::part(knob) {
       outline: 6px solid var(--ion-background-color, #ffffff);
+      transition: outline var(--token-expressive-fast-effects);
     }
     &.range-pressed:not(.range-value-min):not(.range-value-max)::part(knob) {
       outline: 7px solid var(--ion-background-color, #ffffff);
@@ -110,6 +113,7 @@ ion-range.md:not(.md3-disabled) {
     &:not(.range-value-min)::part(knob-lower),
     &:not(.range-value-max)::part(knob-upper) {
       outline: 6px solid var(--ion-background-color, #ffffff);
+      transition: outline var(--token-expressive-fast-effects);
     }
 
     &.range-pressed:not(.range-value-min)::part(knob-lower),
