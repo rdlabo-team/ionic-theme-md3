@@ -88,7 +88,7 @@ ion-range.md:not(.md3-disabled) {
         border-bottom-left-radius: calc(var(--knob-border-radius) / 2);
         margin-left: 6px;
       }
-      ::part(bar) {
+      &::part(bar) {
         width: calc(100% - 6px);
       }
     }
