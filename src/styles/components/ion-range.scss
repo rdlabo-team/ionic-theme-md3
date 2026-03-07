@@ -16,7 +16,7 @@ ion-range.md:not(.md3-disabled) {
 
   &::part(knob) {
     width: 4px;
-    transition: width var(--token-expressive-fast-effects);
+    transition: width var(--token-expressive-fast-effects), transform var(--token-expressive-fast-effects);
     will-change: width;
     height: var(--knob-size);
     background: var(--ion-color-primary);
