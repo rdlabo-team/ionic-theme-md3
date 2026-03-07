@@ -41,6 +41,8 @@ This is a CSS theme for extending your Ionic project. It does not work on its ow
 npm install @rdlabo/ionic-theme-md3
 ```
 
+Note: **If you use @ionic/core@ < 8.8.0**, use @rdlabo/ionic-theme-md3@1.0.2.
+
 And import the theme in your project's main CSS file (e.g., `src/styles.scss`).
 
 ```css
